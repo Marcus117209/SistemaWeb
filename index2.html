@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Menu de Administrar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <!-- Navbar Brand-->
+      <a class="navbar-brand ps-3" href="index2.html">Iniciar QueryQuasar</a>
+      <!-- Sidebar Toggle-->
+      <button
+        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+        id="sidebarToggle"
+        href="#!"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Navbar Search-->
+      <form
+        class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
+      ></form>
+    </nav>
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <div class="sb-sidenav-menu-heading">Principal</div>
+              <a class="nav-link" href="index2.html">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                Inicio
+              </a>
+              <div class="sb-sidenav-menu-heading">Administrar</div>
+              <a
+                class="nav-link collapsed"
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseLayouts"
+                aria-expanded="false"
+                aria-controls="collapseLayouts"
+              >
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
+                </div>
+                Bases de datos
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
+              <div
+                class="collapse"
+                id="collapseLayouts"
+                aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"
+              >
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="layout-static.html">Escuela</a>
+                  <a class="nav-link" href="layout-sidenav-light.html"
+                    >Empresa</a
+                  >
+                </nav>
+                <label for="listaBasesDatos">Bases de Datos:</label>
+                <select id="listaBasesDatos" class="form-select"></select>
+              </div>
+
+              <a
+                class="nav-link collapsed"
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePages"
+                aria-expanded="false"
+                aria-controls="collapsePages"
+              >
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>
+                Tablas
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
+              <div
+                class="collapse"
+                id="collapsePages"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#sidenavAccordion"
+              >
+                <nav
+                  class="sb-sidenav-menu-nested nav accordion"
+                  id="sidenavAccordionPages"
+                >
+                  <a
+                    class="nav-link collapsed"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pagesCollapseAuth"
+                    aria-expanded="false"
+                    aria-controls="pagesCollapseAuth"
+                  >
+                    Escuela
+                    <div class="sb-sidenav-collapse-arrow">
+                      <i class="fas fa-angle-down"></i>
+                    </div>
+                  </a>
+                  <div
+                    class="collapse"
+                    id="pagesCollapseAuth"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordionPages"
+                  >
+                    <nav class="sb-sidenav-menu-nested nav">
+                      <a class="nav-link" href="login.html">Profesores</a>
+                      <a class="nav-link" href="register.html">Alumnos</a>
+                      <a class="nav-link" href="password.html">Materias</a>
+                    </nav>
+                  </div>
+                  <a
+                    class="nav-link collapsed"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pagesCollapseError"
+                    aria-expanded="false"
+                    aria-controls="pagesCollapseError"
+                  >
+                    Empresa
+                    <div class="sb-sidenav-collapse-arrow">
+                      <i class="fas fa-angle-down"></i>
+                    </div>
+                  </a>
+                  <div
+                    class="collapse"
+                    id="pagesCollapseError"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordionPages"
+                  >
+                    <nav class="sb-sidenav-menu-nested nav">
+                      <a class="nav-link" href="401.html">Empleados</a>
+                      <a class="nav-link" href="404.html">Clientes</a>
+                      <a class="nav-link" href="500.html">Productos</a>
+                    </nav>
+                  </div>
+                </nav>
+              </div>
+              <div class="sb-sidenav-menu-heading">Observar</div>
+              <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                Registros
+              </a>
+              <a class="nav-link" href="tables.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Tablas
+              </a>
+            </div>
+          </div>
+          <div class="sb-sidenav-footer">
+            <div class="small">Pagina modificada por:</div>
+            Marco Hernandez
+          </div>
+        </nav>
+      </div>
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Menu principal</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Elige alguna opcion</li>
+            </ol>
+            <div class="row">
+              <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                  <div class="card-body">Conectar con MySQL</div>
+                  <div
+                    class="card-footer d-flex align-items-center justify-content-between"
+                  >
+                    <a class="small text-white stretched-link" href="#"
+                      >Ver detalles</a
+                    >
+                    <div class="small text-white">
+                      <i class="fas fa-angle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                  <div class="card-body">Crear base de datos</div>
+                  <div
+                    class="card-footer d-flex align-items-center justify-content-between"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#createDatabaseModal"
+                    >
+                      Crear base de datos
+                    </button>
+                    <div class="small text-white">
+                      <i class="fas fa-angle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="modal fade"
+                id="createDatabaseModal"
+                tabindex="-1"
+                aria-labelledby="createDatabaseModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="createDatabaseModalLabel">
+                        Crear base de datos
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <label for="nombreBD">Nombre de la base de datos:</label>
+                      <input type="text" id="nombreBD" class="form-control" />
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="simularCreacionBaseDeDatos()"
+                      >
+                        Crear
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                  <div class="card-body">Crear Tablas</div>
+                  <div
+                    class="card-footer d-flex align-items-center justify-content-between"
+                  >
+                    <a
+                      class="small text-white stretched-link"
+                      href="#"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalCrearTablas"
+                      >Ver detalles</a
+                    >
+                    <div class="small text-white">
+                      <i class="fas fa-angle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agrega esta nueva modal para la creación de tablas -->
+              <div
+                class="modal fade"
+                id="modalCrearTablas"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Crear Tablas
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <label for="nombreTabla">Nombre de la Tabla:</label>
+                      <input
+                        type="text"
+                        id="nombreTabla"
+                        class="form-control"
+                      />
+                      <label for="seleccionarBD"
+                        >Seleccionar Base de Datos:</label
+                      >
+                      <select id="seleccionarBD" class="form-select">
+                        <!-- Las opciones se llenarán dinámicamente en el script -->
+                      </select>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="crearTabla()"
+                      >
+                        Crear Tabla
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <script>
+                function simularCreacionBaseDeDatos() {
+                  var nombreBD = document.getElementById("nombreBD").value;
+
+                  if (nombreBD.trim() === "") {
+                    alert("Por favor, ingrese un nombre de base de datos.");
+                    return;
+                  }
+
+                  alert(
+                    "La base de datos '" +
+                      nombreBD +
+                      "' se ha creado con éxito."
+                  );
+
+                  // Agrega una nueva opción a la lista desplegable
+                  var listaBasesDatos =
+                    document.getElementById("listaBasesDatos");
+                  var nuevaOpcion = document.createElement("option");
+                  nuevaOpcion.text = nombreBD;
+                  listaBasesDatos.add(nuevaOpcion);
+
+                  // Agrega el nombre de la base de datos a la lista de la nueva modal
+                  var seleccionarBD = document.getElementById("seleccionarBD");
+                  var nuevaOpcionModal = document.createElement("option");
+                  nuevaOpcionModal.text = nombreBD;
+                  seleccionarBD.add(nuevaOpcionModal);
+
+                  // Cierra el modal si es necesario
+                  var modal = new bootstrap.Modal(
+                    document.getElementById("tuModal")
+                  );
+                  modal.hide();
+                }
+              </script>
+              <script>
+                function crearTabla() {
+                  var nombreTabla =
+                    document.getElementById("nombreTabla").value;
+                  var seleccionarBD = document.getElementById("seleccionarBD");
+                  var selectedBD =
+                    seleccionarBD.options[seleccionarBD.selectedIndex].text;
+
+                  if (nombreTabla.trim() === "") {
+                    alert("Por favor, ingrese un nombre de tabla.");
+                    return;
+                  }
+
+                  alert(
+                    "La tabla '" +
+                      nombreTabla +
+                      "' se ha creado en la base de datos '" +
+                      selectedBD +
+                      "' con éxito."
+                  );
+
+                  // Cierra el modal de Crear Tablas si es necesario
+                  var modalCrearTablas = new bootstrap.Modal(
+                    document.getElementById("modalCrearTablas")
+                  );
+                  modalCrearTablas.hide();
+                }
+              </script>
+
+              <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                  <div class="card-body">Adiminstra Base de datos</div>
+                  <div
+                    class="card-footer d-flex align-items-center justify-content-between"
+                  >
+                    <a class="small text-white stretched-link" href="#"
+                      >Ver detalles</a
+                    >
+                    <div class="small text-white">
+                      <i class="fas fa-angle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      function mostrarPopup() {
+        // Crea un nuevo elemento HTML para la ventana emergente
+        var popup = document.createElement("div");
+        popup.setAttribute("class", "popup");
+
+        // Agrega dos campos de entrada y etiquetas para nombre de usuario y contraseña
+        var usuario = document.createElement("input");
+        usuario.setAttribute("type", "text");
+        usuario.setAttribute("placeholder", "Nombre de usuario");
+
+        var contraseña = document.createElement("input");
+        contraseña.setAttribute("type", "password");
+        contraseña.setAttribute("placeholder", "Contraseña");
+
+        var labelUsuario = document.createElement("label");
+        labelUsuario.setAttribute("for", "usuario");
+        labelUsuario.textContent = "Nombre de usuario:";
+
+        var labelContraseña = document.createElement("label");
+        labelContraseña.setAttribute("for", "contraseña");
+        labelContraseña.textContent = "Contraseña:";
+
+        // Agrega los campos de entrada y las etiquetas a la ventana emergente
+        popup.appendChild(usuario);
+        popup.appendChild(labelUsuario);
+        popup.appendChild(contraseña);
+        popup.appendChild(labelContraseña);
+
+        // Agrega botones para cancelar y conectarse a MySQL
+        var cancelar = document.createElement("button");
+        cancelar.textContent = "Cancelar";
+
+        var conectar = document.createElement("button");
+        conectar.textContent = "Conectar";
+
+        // Agrega los botones a la ventana emergente
+        popup.appendChild(cancelar);
+        popup.appendChild(conectar);
+
+        // Posiciona la ventana emergente sobre el card
+        popup.style.position = "absolute";
+        popup.style.top = "50%";
+        popup.style.left = "50%";
+        popup.style.transform = "translate(-50%, -50%)";
+
+        // Muestra la ventana emergente
+        document.body.appendChild(popup);
+      }
+
+      // Agrega un oyente de eventos de clic en el card
+      document
+        .querySelector(".card-footer > a")
+        .addEventListener("click", mostrarPopup);
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/scripts.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/datatables-simple-demo.js"></script>
+  </body>
+</html>
